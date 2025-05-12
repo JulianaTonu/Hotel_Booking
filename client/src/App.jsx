@@ -5,7 +5,7 @@ function App() {
 
   return (
     <div>
-           <h1>Hotel Booking</h1>
+           <h1 className='text-red-600'>Hotel Booking</h1>
     </div>
   )
 }
