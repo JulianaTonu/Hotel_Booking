@@ -9,7 +9,6 @@ function App() {
   const isOwnerPath = useLocation().pathname.includes('owner');
   return (
     <div>
-      <h1 className='text-red-600'>Hotel Booking</h1>
       {!isOwnerPath && <Navbar />}
       <div>
         <Routes>
