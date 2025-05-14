@@ -6,8 +6,9 @@ const HotelCard = ({ room, index }) => {
     return (
         <Link to={'/room/' + room._id} onClick={() => scrollTo(0, 0)}
             key={room._id}>
-            <img src={room.images[0]} alt=""
-                className='relative max-w-70 w-full rounded-xl overflow-hidden bg-white text-gray-500/90 shadow-[0px_4px_4px_rgba(0,0,0,0.05)]' />
+           <div className='relative overflow-hidden bg-white text-gray-500/90 shadow-lg'>
+             <img src={room.images[0]} alt=""
+                className=' max-w-70 w-full rounded-xl ' />
 
             {index % 2 === 0 && <p className='px-3 py-1 absolute top-3 left-3 text-xs bg-white
             text-gray-800 font-medium rounded-full'>Best Seller</p>}
@@ -30,6 +31,7 @@ const HotelCard = ({ room, index }) => {
                     <button className='px-4 py-2 text-sm font-medium border border-gray-300 hover:border-gray-50 transition-all cursor-pointer' >Book Now</button>
                 </div>
             </div>
+           </div>
         </Link>
     );
 };
