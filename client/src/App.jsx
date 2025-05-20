@@ -15,8 +15,8 @@ function App() {
   return (
     <div className="flex flex-col min-h-screen">
       {!isOwnerPath && <Navbar />}
-      <HotelReg/>
-      <div className='flex-1'>
+      {false &&  <HotelReg/>}
+      <div className='flex-1 min-h-[70vh]'>
         <Routes>
           <Route path='/' element={<Home/>}/>
           <Route path='/rooms' element={<AllRooms/>}/>
