@@ -15,7 +15,6 @@ const HotelReg = () => {
                 right-4 h-4 w-4 cursor-pointer'/>
                 </div>
             </form>
-
         </div>
     );
 };
