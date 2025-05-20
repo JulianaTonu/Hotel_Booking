@@ -7,6 +7,7 @@ import Footer from './components/Footer';
 import AllRooms from './pages/AllRooms';
 import RoomDetails from './pages/RoomDetails';
 import MyBookings from './pages/MyBookings';
+import HotelReg from './components/HotelReg';
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
   return (
     <div className="flex flex-col min-h-screen">
       {!isOwnerPath && <Navbar />}
+      <HotelReg/>
       <div className='flex-1'>
         <Routes>
           <Route path='/' element={<Home/>}/>
