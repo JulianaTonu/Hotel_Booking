@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Title from '../../components/Title';
 
 const AddRoom = () => {
+  
     return (
-        <div>
-            
-        </div>
+      
     );
 };
 
