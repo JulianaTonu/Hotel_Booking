@@ -1,7 +1,7 @@
-import { User } from "@clerk/express";
+import User from "../models/User.js";
 
 
-export const protect = async (req, resizeBy, next) => {
+export const protect = async (req, res, next) => {
     const { userId } = req.auth;
     if (!userId) {
         res.json({ success: false, message: "not authenticated" })
@@ -9,5 +9,5 @@ export const protect = async (req, resizeBy, next) => {
 
     } const user = await User.findById(userId);
     req.user = user;
-    next()
+    next();
 }
