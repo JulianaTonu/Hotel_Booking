@@ -6,9 +6,12 @@ import { clerkMiddleware } from '@clerk/express';
 import clerkWebhooks from './controllers/clerkWebhooks.js';
 import userRouter from './routes/userRoutes.js';
 import hotelRouter from './routes/hotelRoutes.js';
+import connectCloudinary from './configs/cloudinary.js';
+import roomRouter from './routes/roomRoutes.js';
 
 
 connectDB()
+connectCloudinary();
 
 const app = express()
 app.use(cors()) // Enable Cross-Origin Resource sharing
@@ -22,6 +25,7 @@ app.post("/api/clerk", clerkWebhooks);
 app.get('/', (req, res) => res.send("Tonu's API is working"))
 app.use('/api/user',userRouter)
 app.use('/api/hotels', hotelRouter)
+app.use('/api/rooms', roomRouter)
 
 const PORT = process.env.PORT || 3000;
 
