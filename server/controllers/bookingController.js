@@ -11,3 +11,15 @@ const checkAvailability =async ({checkInDate, checkOutDate, room})=>{
         console.error(error.message)
     }
 }
+
+// API to check availability of room 
+//POST /api/bookings/check-availability
+
+export const checkAvailabilityAPI =async (req, res)=>{
+    try {
+        const {room, checkInDate, checkOutDate} =req.body;
+        const isAvailable =await checkAvailability({ checkInDate, checkOutDate, room})
+    } catch (error) {
+        res.json({success:false, isAvailable})
+    }
+}
