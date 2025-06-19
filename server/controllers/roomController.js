@@ -34,7 +34,7 @@ export const createRoom = async (req, res) => {
 }
 
 // API to get all rooms
-export const getRooms = async (res, req) => {
+export const getRooms = async (req, res) => {
     try {
         const rooms = await Room.find({ isAvailable: true }).populate({
             path: 'hotel',
@@ -51,7 +51,7 @@ export const getRooms = async (res, req) => {
 
 
 // API to get all rooms for specific hotel
-export const getOwnerRooms = async (res,req) => {
+export const getOwnerRooms = async (req,res) => {
     try {
         const hotelData = await Hotel({ owner: req.auth.userId })
             const rooms = await Room.find({ hotel: hotelData._id.toString() }).populate("hotel");
@@ -64,10 +64,10 @@ export const getOwnerRooms = async (res,req) => {
 
 
 // API to toggle availability of a room
-export const toggleRoomAvailability = async (res,req) => {
+export const toggleRoomAvailability = async (req,res) => {
     try {
         const { roomId } = req.body;
-        const roomData = await roomId.findById(roomId);
+        const roomData = await Room.findById(roomId);
         roomData.isAvailable = !roomData.isAvailable;
         await roomData.save();
         res.json({ success: true, message: "Room availability updated" })
