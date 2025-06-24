@@ -1,3 +1,4 @@
+import mongoose from "mongoose";
 
 
 const bookingSchema = new mongoose.Schema({
@@ -21,7 +22,9 @@ const bookingSchema = new mongoose.Schema({
     },
     isPaid:{type:Boolean, required:false}
 
-},{timestamp:True}
+},{timestamp:true}
 );
 
-const Booking = mongoose.model("Room", bookingSchema)
+const Booking = mongoose.model("Booking", bookingSchema)
+
+export default Booking ;
