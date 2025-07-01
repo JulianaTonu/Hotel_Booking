@@ -12,7 +12,7 @@ const HotelReg = () => {
     const [city, setCity] = useState("")
 
     const { setShowHotelReg, axios, getToken, setIsOwner } = useAppContext()
-
+console.log("getToken",getToken)
     const onSubmitHandler = async (event) => {
         try {
             event.preventDefault();
@@ -38,10 +38,12 @@ const HotelReg = () => {
     }
 
     return (
-        <div onClick={() => setShowHotelReg(false)}
+        <div onClick={() => setShowHotelReg(true)}
             className='fixed top-0 bottom-0 left-0 right-0 z-100 flex
         items-center justify-center bg-black/70'>
-            <form onSubmit={onSubmitHandler} className="flex bg-white rounded-xl max-w-4xl max-md:max-2">
+            <form   onClick={(e) => e.stopPropagation()}
+            onSubmit={onSubmitHandler} 
+            className="flex bg-white rounded-xl max-w-4xl max-md:max-2">
                 <img src={assets.regImage} alt="reg-image"
                     className='w-1/2 rounded-xl hidden md:block'
                 />
