@@ -21,15 +21,16 @@ const AddRoom = () => {
             'Free Breakfast': false,
             'Free Service': false,
             'Mountain View': false,
-            'Pool access': false,
+            'Pool access': false
         }
     })
     const [loading, setLoading] = useState(false)
     console.log(loading)
     const onSubmitHandler = async (e) => {
         e.preventDefault()
+
         // Check if all inputs are filled
-        if (!inputs.roomType || !inputs.pricePerNight || !inputs.amenities ||
+        if (!inputs.roomType || !inputs.pricePerNight ||!inputs.amenities ||
             !Object.values(images).some(image => image)) {
             toast.error("Please fill in all the details")
             return;
